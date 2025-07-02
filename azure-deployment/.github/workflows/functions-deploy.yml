@@ -1,0 +1,26 @@
+name: Deploy Azure Functions
+
+on:
+  push:
+    paths:
+      - 'functions/**'
+    branches:
+      - main
+
+jobs:
+  deploy-function:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js (or Python)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # or use setup-python
+
+      - name: Deploy Function App
+        uses: Azure/functions-action@v1
+        with:
+          app-name: <YOUR_FUNCTION_APP_NAME>  # Match one created via Terraform
+          package: ./functions/ChatRetrieveFunction
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
