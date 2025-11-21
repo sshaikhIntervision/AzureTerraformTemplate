@@ -1,0 +1,37 @@
+# Testing Dependencies for Azure Terraform Template
+
+# Core testing framework
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+pytest-asyncio>=0.21.0
+
+# Mocking and fixtures
+pytest-env>=0.8.2
+pytest-timeout>=2.1.0
+
+# Azure Functions testing
+azure-functions>=1.17.0
+
+# Database testing
+psycopg2-binary>=2.9.7
+
+# Document processing (for testing ReadUploadDoc)
+PyPDF2>=3.0.1
+python-docx>=0.8.11
+
+# OpenAI testing
+openai>=1.0.0
+
+# HTTP mocking
+requests>=2.31.0
+requests-mock>=1.11.0
+
+# Code quality
+flake8>=6.1.0
+black>=23.7.0
+mypy>=1.5.0
+
+# Coverage reporting
+coverage>=7.3.0
+coverage[toml]>=7.3.0
